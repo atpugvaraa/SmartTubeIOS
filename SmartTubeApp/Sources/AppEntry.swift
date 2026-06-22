@@ -1,5 +1,4 @@
 import SwiftUI
-import FirebaseCore
 import SmartTubeIOS
 import SmartTubeIOSCore
 import os
@@ -44,7 +43,6 @@ struct AppEntry: App {
     private static let pendingRSSFeedKey    = "pendingRSSFeedURL"
 
     init() {
-        FirebaseApp.configure()
         let settingsStore = SettingsStore()
         let poTokenProvider: (any PoTokenProvider)? = {
             if let url = settingsStore.settings.poTokenServiceURL {
